@@ -9,5 +9,9 @@ edition = "2021"
 name = "basic"
 path = "src/basic.rs"
 
+[[bin]]
+name = "draw"
+path = "src/draw.rs"
+
 [dependencies]
 nannou = "0.18.1"
