@@ -1,4 +1,7 @@
-[alias] 
+[alias]
 basic = "run --bin basic"
 draw = "run --bin draw"
 draw_arrow = "run --bin draw_arrow"
+sin_wave = "run --bin sin_wave"
+draw_ellipse = "run --bin draw_ellipse"
+draw_axes = "run --bin draw_axes"

@@ -17,5 +17,17 @@ path = "src/draw.rs"
 name = "draw_arrow"
 path = "src/draw_arrow.rs"
 
+[[bin]]
+name = "sin_wave"
+path = "src/sin_wave.rs"
+
+[[bin]]
+name = "draw_ellipse"
+path = "src/draw_ellipse.rs"
+
+[[bin]]
+name = "draw_axes"
+path = "src/draw_axes.rs"
+
 [dependencies]
 nannou = "0.18.1"
