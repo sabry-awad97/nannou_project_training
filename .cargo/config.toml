@@ -1,3 +1,4 @@
 [alias] 
 basic = "run --bin basic"
 draw = "run --bin draw"
+draw_arrow = "run --bin draw_arrow"

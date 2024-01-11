@@ -13,5 +13,9 @@ path = "src/basic.rs"
 name = "draw"
 path = "src/draw.rs"
 
+[[bin]]
+name = "draw_arrow"
+path = "src/draw_arrow.rs"
+
 [dependencies]
 nannou = "0.18.1"
