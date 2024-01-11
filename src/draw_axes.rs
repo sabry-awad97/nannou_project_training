@@ -4,15 +4,28 @@ fn main() {
     nannou::app(model).update(update).run();
 }
 
-struct Model;
+struct Model {
+    capture_done: bool,
+}
 
 fn model(app: &App) -> Model {
     app.new_window().size(800, 600).view(view).build().unwrap();
 
-    Model
+    Model {
+        capture_done: false,
+    }
 }
 
-fn update(_app: &App, _model: &mut Model, _update: Update) {}
+fn update(app: &App, model: &mut Model, _update: Update) {
+    // Check if capture has been done, and capture the frame if not.
+    if !model.capture_done {
+        println!("Capturing frame...");
+        // Capture the frame and save it as a PNG file.
+        app.main_window()
+            .capture_frame(app.exe_name().unwrap() + "_frame.png");
+        model.capture_done = true;
+    }
+}
 
 fn view(app: &App, _model: &Model, frame: Frame) {
     // Begin drawing.
@@ -32,7 +45,4 @@ fn view(app: &App, _model: &Model, frame: Frame) {
 
     // Finish drawing and render the frame.
     draw.to_frame(app, &frame).unwrap();
-
-    // Capture the frame and save it as a PNG file.
-    // app.main_window().capture_frame(app.exe_name().unwrap() + "_frame.png");
 }
